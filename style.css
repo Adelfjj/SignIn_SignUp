@@ -1,0 +1,113 @@
+:root{
+    --gr-color:
+    linear-gradient(to right bottom, #fdac55, #fea153, #ff9653, #ff8b54, #ff7f56);
+    --bgColor:#797c7d;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body,html{
+    font-family: Roboto, sans-serif;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7567b;
+}
+.container{
+    position: relative;
+    max-width: 750px;
+    width: 65%;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2em;
+    border-radius: 1.2em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em .5em;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+section span{
+    display: block;
+    color: var(--bgColor);
+    font-size: 0.8em;
+    cursor: pointer;
+}
+section form{
+    width: 80%;
+}
+section form > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+section form input:not(input[type="submit"]){
+    background-color: #eaeff5;
+    border: none;
+    border-radius: .5em;
+    padding: 0.8em 1em 0.8em 2.8em;
+    font-size: .9em;
+    width: 100%;
+    outline:none;
+    color: var(--bgColor);
+}
+section form input:not(input[type="submit"]):focus{
+    border: 1px solid #ff8e54;
+}
+section form input::placeholder{
+    font-size: .85em;
+    color: #797c7d;
+}
+section form i{
+    position: absolute;
+    left: 12px;
+    color: #797c7d;
+}
+section form input[type="submit"]{
+    color: white;
+    background: var(--gr-color);
+    border: none;
+    border-radius: 1em;
+    font-size: 1.1em;
+    padding: .8em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+.signIn i.fa-user-circle-o{
+    margin-top: 0.15em;
+    font-size: 5em;
+    background: var(--gr-color);
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.signIn form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+}
+.signIn form .forgotPass{
+    
+    align-self: flex-end;
+}
+.information{
+    position: absolute;
+    z-index: 1;
+}
+
