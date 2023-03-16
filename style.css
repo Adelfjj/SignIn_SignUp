@@ -47,8 +47,15 @@ section span{
     font-size: 0.8em;
     cursor: pointer;
 }
+section span:hover{
+    text-decoration:underline;
+}
 section form{
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
 }
 section form > div {
     position: relative;
@@ -57,7 +64,7 @@ section form > div {
 }
 section form input:not(input[type="submit"]){
     background-color: #eaeff5;
-    border: none;
+    border: 1px solid transparent;
     border-radius: .5em;
     padding: 0.8em 1em 0.8em 2.8em;
     font-size: .9em;
@@ -80,13 +87,19 @@ section form i{
 section form input[type="submit"]{
     color: white;
     background: var(--gr-color);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 1em;
     font-size: 1.1em;
     padding: .8em;
     font-weight: bold;
     cursor: pointer;
     margin: 0.5em 0;
+}
+section form input[type="submit"]:hover{
+    background: var(--gr-color);
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    border: 1px solid var(--bgColor);
 }
 .signIn i.fa-user-circle-o{
     margin-top: 0.15em;
@@ -97,17 +110,49 @@ section form input[type="submit"]{
 }
 .signIn form {
     margin-top: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    text-align: center;
 }
 .signIn form .forgotPass{
     
     align-self: flex-end;
 }
-.information{
-    position: absolute;
-    z-index: 1;
+.signUp{
+    margin-top: 2.3em;
+}
+.signUp form{
+    margin-top: 2em;
 }
 
+.information{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    padding: 1em;
+    z-index: 1;
+    background-image:var(--gr-color);
+    border-bottom-left-radius: 1.2em;
+    border-top-left-radius: 1.2em;
+    overflow: hidden;
+    transition: left 0.8s cubic-bezier(.65,.05,.36,1);
+}
+.information .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35%;
+    gap: 2em;
+    color:white;
+}
+.information .content img{
+    width: 50%;
+}
+.information.sign{
+    border-bottom-left-radius: 0em;
+    border-top-left-radius: 0em;
+    border-bottom-right-radius: 1.2em;
+    border-top-right-radius: 1.2em;
+    left: 50%;
+    animation-name: identifier;
+    animation-duration: 0.8s;
+}
+  
