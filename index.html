@@ -17,15 +17,15 @@
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 <form action="">
                     <div class="email">
-                        <input type="email" name="email" id="email" placeholder="E-mail" required="true">
+                        <input type="email" name="email" id="email_SignIn" placeholder="E-mail" required>
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     </div>
                     <div class="password">
-                        <input type="password" name="email" id="email"  required="true" placeholder="Password">
+                        <input type="password" name="password" id="password_SignIn" placeholder="Password" required >
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     </div>
                     <span class="forgotPass">Forgot your password?</span>
-                    <input type="submit" value="Sign In" id="submit">
+                    <input type="submit" value="Sign In" id="submit_SignIn">
                     <span class="create">Create new account</span>
                 </form>
             </section>
@@ -38,14 +38,14 @@
                         <i class="fa fa-user-o" aria-hidden="true"></i>
                     </div>
                     <div class="email">
-                        <input type="email" name="email" id="SignUp_email" placeholder="E-mail" autocomplete="off">
+                        <input type="email" name="email" id="email_SignUp" placeholder="E-mail" autocomplete="off">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     </div>
                     <div class="password">
-                        <input type="password" name="password" id="SignUp_Pass" placeholder="Password">
+                        <input type="password" name="password" id="password_SignUp" placeholder="Password">
                         <i class="fa fa-lock" aria-hidden="true"></i>
                     </div>
-                    <input type="submit" value="Sign Up">
+                    <input type="submit" value="Sign Up" id="submit_SignUp">
                     <span class="sign_in">Sign-in ?</span>
                 </form>
             </section>
@@ -57,6 +57,12 @@
                 </div>
             </div>
         </div>
+        <dialog id="message">
+            <i class="fa fa-exclamation" aria-hidden="true"></i>
+            <h2>Atenção</h2>
+            <p></p>
+            <button autofocus>Ok</button>
+        </dialog>
     </main>
     <script src="script.js"></script>
 </body>

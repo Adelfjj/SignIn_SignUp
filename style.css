@@ -23,7 +23,7 @@ main{
 .container{
     position: relative;
     max-width: 750px;
-    width: 65%;
+    width: 90%;
     display: flex;
     flex-direction: row-reverse;
     gap: 2em;
@@ -75,6 +75,9 @@ section form input:not(input[type="submit"]){
 section form input:not(input[type="submit"]):focus{
     border: 1px solid #ff8e54;
 }
+section form input:not(input[type="submit"]):focus ~ i {
+    color: #ff8e54;
+}
 section form input::placeholder{
     font-size: .85em;
     color: #797c7d;
@@ -122,6 +125,10 @@ section form input[type="submit"]:hover{
     margin-top: 2em;
 }
 
+.signUp h2{
+    color: var(--bgColor);
+}
+
 .information{
     position: absolute;
     width: 50%;
@@ -152,7 +159,51 @@ section form input[type="submit"]:hover{
     border-bottom-right-radius: 1.2em;
     border-top-right-radius: 1.2em;
     left: 50%;
-    animation-name: identifier;
-    animation-duration: 0.8s;
 }
-  
+dialog#message::backdrop{
+    background-color: #ff8d542e;
+}
+dialog#message{
+    border: none;
+    padding: 1.2em 3em;
+    margin: auto;
+    border-radius: 1.2em;
+    text-align: center;
+}
+dialog#message i{
+    font-size: 3.5em;
+    color: #ff8e54;
+}
+dialog#message h2{
+    font-size: 1.5em;
+    margin-bottom: 0.6em;
+}
+dialog#message button{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #ff8e54;
+    color: white;
+    font-weight: bold;
+    border:none;
+    border-radius: 1.2em;
+    cursor: pointer;
+    font-size: 1em;
+}
+@media only screen and (max-width: 768px){
+    section.signUp, .information{
+        display: none;
+    }
+    section.signUp{
+        position: absolute;
+    }
+    .container{
+        width: 57%;
+        min-width: 394px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .container{
+        width: 100vw;
+        min-width: 100%;
+    }
+}
