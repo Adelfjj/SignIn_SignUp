@@ -3,19 +3,30 @@ const submitSignUp = document.querySelector("#submit_SignUp");
 const createAccount = document.querySelector(".create");
 const information = document.querySelector(".information");
 const ReturnSignIn = document.querySelector(".sign_in");
-const inpPasswordIn = document.querySelector("#password_SignIn");
 const message = document.querySelector("#message");
 const btnMessage = message.querySelector("button");
 let h2 = information.querySelector("h2");
-const formSignIn = document.querySelector("section.signIn form");
 
-formSignIn.addEventListener("submit", (e) => {
+const inpPasswordIn = document.querySelector("#password_SignIn");
+const inpPasswordUp = document.querySelector("#password_SignUp");
+const email_SignIn = document.querySelector("#email_SignIn");
+const email_SignUp = document.querySelector("#email_SignUp");
+
+submitSignIn.addEventListener("click", (e) => {
     e.preventDefault();
-    CorrectPassword(inpPasswordIn.value);
+
+    validateEmail(email_SignIn.value) ? 
+    validatePassword(inpPasswordIn.value) : 
+    setMessage('O E-mail deve seguir o padrão: "Teste@teste.com"');
+
 });
 
 submitSignUp.addEventListener("click", (e) => {
     e.preventDefault();
+
+    validateEmail(email_SignUp.value) ? 
+    validatePassword(inpPasswordUp.value) : 
+    setMessage('O E-mail deve seguir o padrão: "Teste@teste.com"');
 });
 
 createAccount.addEventListener("click", () => {
@@ -28,20 +39,28 @@ ReturnSignIn.addEventListener("click", () => {
     h2.textContent = "Welcome Back!";
 });
 
-const regex = /[0-9]/;
-const CorrectPassword = (inputValue) => {
+
+const validatePassword = (inputValue) => {
+    const regex = /[0-9]/;
+
     if(inputValue.length >= 8){
         if(regex.test(inputValue)){
-            console.log("contem numero!");
+            console.log("Verificado!");
         }else{
-            SetMessage("A senha deve conter ao menos um numero!");
+            setMessage("A senha deve conter ao menos um numero!");
         }
     }else{
-        SetMessage("A senha deve conter no minimo 8 caracteres!");
+        setMessage("A senha deve conter no minimo 8 caracteres e um numero !");
     }
 }
 
-const SetMessage = (text) => {
+const validateEmail = (email) => {
+    let re = /\S+@\S+\.\S+/;
+    console.log(email);
+    return re.test(email);
+}
+
+const setMessage = (text) => {
     message.querySelector("p").textContent = text;
     message.showModal();
 }
