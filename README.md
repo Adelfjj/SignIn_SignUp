@@ -2,8 +2,8 @@
 
 <br>
 
-<p align="center">
-  Imagem do projeto ...
+ <p align="center">
+  <img src=".github/projeto.gif" width="100%">
 </p>
 
 ## 🚀 Tecnologias
