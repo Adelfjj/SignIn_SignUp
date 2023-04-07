@@ -2,11 +2,7 @@
 
 <br>
 
-<<<<<<< HEAD
 <p align="center">
-=======
- <p align="center">
->>>>>>> 17dd8835860c465a23797e8842e7f344497f4c91
   <img src=".github/projeto.gif" width="100%">
 </p>
 
