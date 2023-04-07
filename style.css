@@ -190,15 +190,39 @@ dialog#message button{
     font-size: 1em;
 }
 @media only screen and (max-width: 768px){
-    section.signUp, .information{
+    .information{
         display: none;
     }
-    section.signUp{
+    section.signIn{
+        position: relative;
+        right: 0;
+        opacity: 1;
+        transition: right 1s, opacity 1s;
+    }
+    section{
         position: absolute;
+        display: flex;
+        opacity: 0;
+        right: -100%;
+        transition: right 1s , opacity 1s;
+    }
+    section.in{
+        position:relative;
+        right: 0;
+        opacity: 1;
+        transition: right 1s, opacity 1s;
+    }
+    section.out{
+        position: absolute;
+        right: -100%;
+        opacity: 0;
+        transition: right 1s, opacity 1s;
     }
     .container{
         width: 57%;
         min-width: 394px;
+        position: relative;
+        overflow: hidden;
     }
 }
 @media only screen and (max-width: 400px){

@@ -7,6 +7,9 @@ const message = document.querySelector("#message");
 const btnMessage = message.querySelector("button");
 let h2 = information.querySelector("h2");
 
+const signUpSection = document.querySelector(".signUp");
+const signInSection = document.querySelector(".signIn");
+
 const inpPasswordIn = document.querySelector("#password_SignIn");
 const inpPasswordUp = document.querySelector("#password_SignUp");
 const email_SignIn = document.querySelector("#email_SignIn");
@@ -31,11 +34,16 @@ submitSignUp.addEventListener("click", (e) => {
 
 createAccount.addEventListener("click", () => {
     information.classList.toggle("sign");
+    signInSection.classList.toggle("out");
+    signUpSection.classList.toggle("in");
+    
         h2.textContent = "Join Us!";
 });
 
 ReturnSignIn.addEventListener("click", () => {
     information.classList.toggle("sign");
+    signInSection.classList.toggle("out");
+    signUpSection.classList.toggle("in");
     h2.textContent = "Welcome Back!";
 });
 
